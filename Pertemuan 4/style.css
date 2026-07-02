@@ -1,0 +1,125 @@
+body {
+    background-color: rgb(179, 168, 168);
+    color: black;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #065A82;
+    color: white;
+    padding: 30px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+main {
+    padding: 16px;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-radius: 25px;
+    border: 1px solid #cccccc;
+}
+
+/* bagian Tentang Saya & Skill bersanding */
+.profile-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.tentang, #skill {
+    flex: 1;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item {
+    position: relative;
+    background-color: #21B0A7;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.skill-item:hover {
+    background-color: #065A82;
+}
+
+/* Kustom Tooltip untuk Skill */
+.skill-item::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    display: none;
+}
+
+.skill-item:hover::after {
+    display: block;
+}
+
+
+/* Bagian Riwayat Pendidikan & Pengalaman (Accordion & Tabel) */
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #065A82 !important;
+    color: white !important;
+}
+
+/* Footer */
+footer {
+    background-color: #065A82;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+    main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px;
+    }
+
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
